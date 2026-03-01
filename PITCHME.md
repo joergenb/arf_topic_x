@@ -1,8 +1,8 @@
 ---
   marp: true
 lang: en-US
-title: Marp CLI example
-description: Hosting Marp slide deck on the web
+title: X: Registration of large organizations.
+description: asdf
 theme: gaia
 transition: fade
 paginate: true
