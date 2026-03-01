@@ -1,5 +1,5 @@
 ---
-marp: true
+  marp: true
 lang: en-US
 title: Marp CLI example
 description: Hosting Marp slide deck on the web
@@ -13,65 +13,22 @@ _paginate: false
 
 # <!--fit--> Er dette ein tittel ?
 
-Hosting Marp slide deck on the web
+Our concern is related to large organizations where there is one organizational identifier, and operating many different digital services relying on the EUDI wallet
 
-https://github.com/yhatt/marp-cli-example
+These services will be run by different product teams internally. 
+Some services will be run by intermediaries (typically saas vendors)
 
-<style scoped>a { color: #36c; }</style>
 
-<!-- This is presenter note. You can write down notes through HTML comment. -->
+We want isolation and data minimization between those services. This can be achieved by :
 
----
+individual WRPAC to each service (but all of them will have the same organizational identifier)
+individual WRPRC to each service (for sure, those services wil have different intended use)
 
-![Marp bg 60%](https://raw.githubusercontent.com/marp-team/marp/master/marp.png)
 
----
+The problem is now: what if one of those services is compromised - do we have mechanisms to limit the damage ?
 
-<!-- _backgroundColor: "#123" -->
-<!-- _color: "#fff" -->
-
-##### <!--fit--> [Marp CLI](https://github.com/marp-team/marp-cli) + [GitHub Pages](https://github.com/pages) | [Netlify](https://www.netlify.com/) | [Vercel](https://vercel.com/)
-
-##### <!--fit--> 👉 The easiest way to host<br />your Marp deck on the web
-
----
-
-![bg right 60%](https://icongr.am/octicons/mark-github.svg)
-
-## **[GitHub Pages](https://github.com/pages)**
-
-#### Ready to write & host your deck!
-
-[![Use this as template h:1.5em](https://img.shields.io/badge/-Use%20this%20as%20template-brightgreen?style=for-the-badge&logo=github)](https://github.com/yhatt/marp-cli-example/generate)
-
----
-
-![bg right 60%](https://icongr.am/simple/netlify.svg?colored)
-
-## **[Netlify](https://www.netlify.com/)**
-
-#### Ready to write & host your deck!
-
-[![Deploy to Netlify h:1.5em](./assets/netlify-deploy-button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yhatt/marp-cli-example)
-
----
-
-![bg right 60%](https://icongr.am/simple/zeit.svg)
-
-## **[Vercel](https://vercel.com/)**
-
-#### Ready to write & host your deck!
-
-[![Deploy to Vercel h:1.5em](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/yhatt/marp-cli-example)
-
----
-
-### <!--fit--> :ok_hand:
-
----
-
-![bg 40% opacity blur](https://avatars1.githubusercontent.com/u/3993388?v=4)
-
-### Created by Yuki Hattori ([@yhatt](https://github.com/yhatt))
-
-https://github.com/yhatt/marp-cli-example
+our view: no.
+an attacker at at compromised service can use his WRPAC to construct an over-reaching VP-request, asking for more personal data than its WRPRC allows, by not including the WRPRC in the request. 
+Wallet would the look up the Registrar API using the organizational identifier
+Register would return ALL intended uses for ALL services for this organization
+User would not be prompted that this service is now asking for more personal data than is is allowed for.
