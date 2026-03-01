@@ -11,19 +11,19 @@ _paginate: false
 
 ![bg opacity](./assets/gradient.jpg)
 
-# <!--fit--> Er dette ein tittel ?
+# <!--fit--> Topic X - registration: large organizations
 
-Our concern is related to large organizations where there is one organizational identifier, and operating many different digital services relying on the EUDI wallet
+Our concern is related to large organizations having one organizational identifier, and operating many different digital services relying on the EUDI wallet:
 
-These services will be run by different product teams internally. 
-Some services will be run by intermediaries (typically saas vendors)
+- These services will be run by different product teams internally. 
+-  Some services will be run by intermediaries (typically saas vendors)
 
+They (and we) want isolation and data minimization between those services. This can be achieved by :
 
-We want isolation and data minimization between those services. This can be achieved by :
+- individual WRPAC to each service (but all of them will have the same organizational identifier)
+- individual WRPRC to each service (for sure, those services wil have different intended use)
 
-individual WRPAC to each service (but all of them will have the same organizational identifier)
-individual WRPRC to each service (for sure, those services wil have different intended use)
-
+-- 
 
 The problem is now: what if one of those services is compromised - do we have mechanisms to limit the damage ?
 
