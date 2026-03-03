@@ -1,7 +1,7 @@
 ---
 marp: true
 lang: en-US
-title: X: Registration of large organizations.
+title: "X: Registration of large organizations."
 description: asdf
 theme: default
 transition: fade
