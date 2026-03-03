@@ -1,3 +1,11 @@
+# X - registration of largs org
+
+See [https://joergenb.github.io/arf_topic_x/](https://joergenb.github.io/arf_topic_x/) for compiled desk
+
+See [presentation.md](presentation.md) for source.
+
+
+
 # Marp CLI example
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/yhatt/marp-cli-example)
