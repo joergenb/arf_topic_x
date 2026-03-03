@@ -88,3 +88,13 @@ An attacker at a compromised service can use the WRPAC to construct an over-aski
 5. Considered using a composite identifier for each WRP-instance (business register id + "client_id")
         - probably breaks EU-ID syntax and other side-effects
 
+
+
+---
+
+**Challenge 3:**  How is IntendedUse bound to an Intermediary in TS5 API calls?
+
+Basically same attack as before, but here the Intermediary RP over-asks credentials from services that end-RPs own run themselves.
+
+
+Since the `IntendedUse` class is not linked on of the specific Intermediaries, it appears to be no way for an end-relying party to stop such attack?  No way for its Data y,  Th
