@@ -92,9 +92,9 @@ An attacker at a compromised service can use the WRPAC to construct an over-aski
 
 ---
 
-**Challenge 3:**  How is IntendedUse bound to an Intermediary in TS5 API calls?
+**Challenge 3:**  How is IntendedUse bound to an Intermediary (in TS5 API calls)?
 
-Basically same attack as before, but here the Intermediary RP over-asks credentials from services that end-RPs own run themselves.
+Basically same scenario as previous one, but here one of the registered `usesIntermediary` RPs over-asks credentials; either from services that end-RPs own run themselves, or from services run by one of the other registrered Intermediaries.
 
 
 Since the `IntendedUse` class is not linked on of the specific Intermediaries, it appears to be no way for an end-relying party to stop such attack?  No way for its Data y,  Th
