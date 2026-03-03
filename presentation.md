@@ -3,7 +3,7 @@ marp: true
 lang: en-US
 title: X: Registration of large organizations.
 description: asdf
-theme: gaia
+theme: default
 transition: fade
 paginate: true
 _paginate: false
@@ -26,30 +26,38 @@ These organizations (and we) want isolation and data minimization between those 
 - Individual WRPAC to each service (but all of them will have the same organizational identifier)
 - Individual WRPRC to each service (for sure, those services wil have different intended use)
 
-Internal "plumbing" & Governance function at the org. distributes certificates.
+We assume an internal "plumbing" & Governance function at the org. distributes certificates.
+
+Similar principles to how Norway built its Oauth2 infrastructure for datasharing.
 
 --- 
 
-Challenge: what if one of those services is compromised - do we have mechanisms to limit the blast radius ?
+**Challenge**: what if one of those services is compromised - do we have mechanisms to limit the blast radius ?
 
 An attacker at at compromised service can use his WRPAC to construct an over-asking VP-request, asking for more personal data than its WRPRC allows, by **not** including the WRPRC in the request. 
 
-1. Wallet would then look up the Registrar API using the organizational identifier (and possible the forged `intendedUseIdentifier`)
-1. Register would return ALL intended uses for ALL services for this organization
+1. Wallet would then look up the Registrar API using the organizational identifier (could also forge `intendedUseIdentifier`)
+1. Register would return ALL intended uses for ALL services for this organization 
 1. User would not be prompted that this service is now asking for more personal data than is is allowed for.
 
 ---
 
-## Countermeasures
+### Countermeasures
 
-1. A specific WRPAC must be bound to a specific IntendedUse (not the other way around)
-  - 
+1. Demand national reguirements for Norwegian Wallets:
 
-
-2. National reguirements for Norwegian Wallets:
-  - return error with missing WRPRC from Norwegian RP
+    - return error if WRPRC is missing (for a Norwegian WRPAC)
+    - won't protect foreign users
 
 
-WRPAC needs to point to a specific IntentedUse
-- 
-- Don't deploy the Registrar API
+2. Don't deploy the Registrar API
+
+3. Standardize (optional) mechanism in WRPAC binding them to a specific IntendedUse (not the other way around)
+   
+
+---
+
+### Other aspects
+
+- A large org. is rarely EITHER an Intermediary or and end-relying party.  
+- A specific 
