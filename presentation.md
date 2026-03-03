@@ -20,7 +20,7 @@ Our concern is related to large organizations having one organizational identifi
 
 ---
 
-These organizations (and we) want isolation and data minimization between those services. This can be achieved by :
+These organizations (and we) want isolation and data minimization between those services. Norway aims to achieve this by :
 
 - Each service has its own WRP registration  (wrp-instance ?)
 - Individual WRPAC to each service (but all of them will have the same organizational identifier)
@@ -28,7 +28,7 @@ These organizations (and we) want isolation and data minimization between those 
 
 - We assume an internal "plumbing" & Governance function at the org. which distributes certificates.
 
-Based on security principles applied in our national Oauth2 infrastructure for datasharing.
+This is based on the security principles applied in our national Oauth2 infrastructure for datasharing.
 
 <!-- We think of an RP as defined in the OpenID world - an oauth2 client / software system. Not an organisation -->
 
@@ -36,15 +36,20 @@ Based on security principles applied in our national Oauth2 infrastructure for d
 
 **Challenge 1:** Can we have multiple WRP registrations with the same identifier ?
 
-ARF 6.6.3.2: 
-> A) The Relying Party registered itself as described in Section 6.4.2 and obtained an access certificate for each of its Relying Party Instances.
+
+ARF 6.4.2
+
+> A Relying Party Instance is a combination of hardware and software used by a Relying Party to interact with a Wallet Unit. A Relying Party can operate multiple Relying Party Instances.
+
+TS6 says for `isIntermediary`:
+
+> Note: If the same Wallet-Relying Party provides a service which requires presentation of attestations, it SHALL register this service as a separate registration instance, 
 
 but TS5-api:
 
-> GET /wrp?identifier=someIdentifier   => *an array of matching WalletRelyingParty objects*
 > GET /wrp/{identifier}  => *requesting a singular WalletRelyingParty object [...] that matches the identifier*
 
-Seems not ?
+Contradiction?
 
 
 --- 
